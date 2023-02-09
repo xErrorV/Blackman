@@ -1,16 +1,23 @@
+const propability = 0.2; // 20%
+
 document.body.onload = () => {
-    if (Math.random() <= 0.2)
+    if (Math.random() <= propability);
     {
-        const img = document.createElement("img");
+        const audio = new Audio(chrome.runtime.getURL('assets/audio.ogg'));
+        const image = document.createElement("img");
 
-        img.src = "https://media.tenor.com/f9Ek6QJFnrkAAAAd/parse-black.gif";
-        img.style.width = '100vw';
-        img.style.height = '100vh';
+        image.src = chrome.runtime.getURL('assets/parse-black.gif');
+        image.style.width = '100vw';
+        image.style.height = '100vh';
 
-        document.body.innerHTML = '';
+        audio.loop = true;
+        audio.muted = "muted";
+        audio.play();
+
         document.body.style.overflow = 'hidden';
         document.body.style.margin = '0';
-        document.body.append(img);
-    }
+        document.body.innerHTML = '';
 
+        document.body.append(image);
+    }
 }
