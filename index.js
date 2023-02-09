@@ -1,7 +1,7 @@
 const propability = 0.2; // 20%
 
 document.body.onload = () => {
-    if (Math.random() <= propability);
+    if (Math.random() <= propability)
     {
         const audio = new Audio(chrome.runtime.getURL('assets/audio.ogg'));
         const image = document.createElement("img");
@@ -11,8 +11,7 @@ document.body.onload = () => {
         image.style.height = '100vh';
 
         audio.loop = true;
-        audio.muted = "muted";
-        audio.play();
+        audio.play();           // error
 
         document.body.style.overflow = 'hidden';
         document.body.style.margin = '0';
