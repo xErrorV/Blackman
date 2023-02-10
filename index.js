@@ -1,22 +1,24 @@
-const propability = 0.2; // 20%
+let active = false;
 
-document.body.onload = () => {
-    if (Math.random() <= propability)
-    {
+document.addEventListener("click", main);
+document.addEventListener("keypress", main);
+
+function main() {
+    if (Math.random() <= 1 && !active)
+    {   
         const audio = new Audio(chrome.runtime.getURL('assets/audio.ogg'));
-        const image = document.createElement("img");
+        const image = new Image();
 
         image.src = chrome.runtime.getURL('assets/parse-black.gif');
-        image.style.width = '100vw';
-        image.style.height = '100vh';
+        image.style.cssText = 'width:100vw;height:100vh';
 
         audio.loop = true;
-        audio.play();           // error
+        audio.play();
 
-        document.body.style.overflow = 'hidden';
-        document.body.style.margin = '0';
+        document.body.style.cssText = "overflow:hidden;margin:0";
         document.body.innerHTML = '';
-
         document.body.append(image);
+        
+        active = true;
     }
 }
