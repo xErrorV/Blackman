@@ -4,7 +4,7 @@ document.addEventListener("click", main);
 document.addEventListener("keypress", main);
 
 function main() {
-    if (Math.random() <= 1 && !active)
+    if (Math.random() <= 0.01 && !active)   // 1%
     {   
         const audio = new Audio(chrome.runtime.getURL('assets/audio.ogg'));
         const image = new Image();
